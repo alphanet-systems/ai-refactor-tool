@@ -1,0 +1,100 @@
+{
+  "name": "ai-refactor-tool",
+  "version": "1.0.0",
+  "description": "🤖 AI-powered codebase analysis and refactoring assistant that analyzes your project structure, identifies improvement opportunities, and generates AI-friendly tasks for systematic refactoring.",
+  "main": "src/index.js",
+  "bin": {
+    "ai-refactor": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
+    "build": "node scripts/build.js",
+    "prepare": "npm run build",
+    "release": "node scripts/release.js"
+  },
+  "keywords": [
+    "ai",
+    "refactoring",
+    "code-analysis",
+    "static-analysis",
+    "developer-tools",
+    "codebase-analyzer",
+    "code-quality",
+    "automated-refactoring",
+    "ast",
+    "code-metrics",
+    "technical-debt",
+    "code-review"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://github.com/yourusername"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-refactor-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ai-refactor-tool/issues"
+  },
+  "homepage": "https://github.com/yourusername/ai-refactor-tool#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "inquirer": "^8.2.5",
+    "glob": "^10.3.0",
+    "lodash": "^4.17.21",
+    "js-yaml": "^4.1.0",
+    "semver": "^7.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
+    "nodemon": "^3.0.1",
+    "@types/node": "^20.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "tests/**/*.js": [
+      "eslint --fix", 
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "preferGlobal": true
+}
